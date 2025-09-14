@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Synchronous JavaScript</title>
+</head>
+<body>
+    <h1>Contoh JavaScript Sinkron</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        const getUser = () => "Rudi";
+
+        console.log("Start..."); // Start...
+        console.log(getUser());  // Rudi
+        console.log("Finish");   // Finish
+
+        // Menampilkan hasil di halaman
+        const hasil = [
+            "Start...",
+            getUser(),
+            "Finish"
+        ];
+        document.getElementById("hasil").textContent = hasil.join('\n');
+    </script>
+</body>
+</html>

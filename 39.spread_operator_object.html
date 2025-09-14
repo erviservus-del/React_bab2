@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Spread Operator pada Object</title>
+</head>
+<body>
+    <h1>Contoh Spread Operator pada Object</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Object mahasiswa awal
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika"
+        };
+
+        // Membuat object baru dengan spread operator
+        let mahasiswa1 = {
+            ...mahasiswa,       // menyalin semua properti dari mahasiswa
+            umur: 20,           // mengubah umur
+            tempatLahir: "Jakarta" // menambahkan properti baru
+        };
+
+        console.log(mahasiswa1);
+        // Output: {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta"}
+
+        // Menampilkan di halaman
+        document.getElementById("hasil").textContent = JSON.stringify(mahasiswa1, null, 2);
+    </script>
+</body>
+</html>

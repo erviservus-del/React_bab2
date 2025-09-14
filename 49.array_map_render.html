@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+</head>
+<body>
+    <h1>Belajar JavaScript (ES6)</h1>
+    <div id="root"></div>
+    <button onclick="renderData()">Tampilkan Data Mahasiswa</button>
+
+    <script>
+        // Array of objects mahasiswa
+        const mahasiswas = [
+            { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" },
+            { nama: "Lisa", umur: 18, jurusan: "Sistem Informasi" },
+            { nama: "Rudi", umur: 19, jurusan: "Teknik Elektro" }
+        ];
+
+        // Fungsi untuk memproses tiap mahasiswa menjadi string HTML
+        const prosesMahasiswa = (mahasiswa) =>
+            `<p>${mahasiswa.nama} (${mahasiswa.umur} tahun) - <i>${mahasiswa.jurusan}</i></p>`;
+
+        // Array hasil pemrosesan mahasiswa
+        const formatMahasiswas = mahasiswas.map(prosesMahasiswa);
+
+        // Fungsi untuk menampilkan data di halaman
+        const renderData = () => {
+            document.getElementById('root').innerHTML = formatMahasiswas.join('');
+        }
+    </script>
+</body>
+</html>

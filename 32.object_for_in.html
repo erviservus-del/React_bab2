@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perulangan for...in pada Object</title>
+</head>
+<body>
+    <h1>Contoh for...in pada Object Mahasiswa</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Membuat object mahasiswa
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika",
+        };
+
+        let hasil = '';
+        // Perulangan untuk menampilkan setiap properti
+        for (let prop in mahasiswa) {
+            hasil += `Nilai ${prop} : ${mahasiswa[prop]}\n`;
+            console.log(`Nilai ${prop} : ${mahasiswa[prop]}`);
+        }
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent = hasil;
+
+        /*
+        Output di console dan halaman:
+        Nilai nama : Eka
+        Nilai umur : 19
+        Nilai jurusan : Teknik Informatika
+        */
+    </script>
+</body>
+</html>

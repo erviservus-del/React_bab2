@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Resolve</title>
+</head>
+<body>
+    <h1>Contoh Promise Resolve</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi getUser mengembalikan Promise
+        const getUser = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Rudi"); // resolve setelah 2 detik
+                }, 2000);
+            });
+        }
+
+        console.log("Start...");
+
+        // Menangkap hasil Promise dengan .then
+        getUser().then((userName) => {
+            console.log(userName);
+        });
+
+        console.log("Finish");
+
+        // Menampilkan hasil di halaman (sementara kita hanya bisa menampilkan Start dan Finish langsung)
+        document.getElementById("hasil").textContent = "Start...\nFinish\n(hasil Promise akan muncul di console setelah 2 detik)";
+    </script>
+</body>
+</html>

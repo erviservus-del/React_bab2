@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbedaan this pada Object</title>
+</head>
+<body>
+    <h1>Perbedaan this: Function Biasa vs Arrow Function</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        let laptopRudi = {
+            milik: "Rudi",
+            merk: "Asus",
+            // Function biasa: this menunjuk ke object laptopRudi
+            foo() { 
+                return this; 
+            },
+            // Arrow function: this menunjuk ke konteks lexical (biasanya window/global)
+            bar: () => this
+        };
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `Function Biasa (foo): ${JSON.stringify(laptopRudi.foo())}\n`;
+        hasil += `Arrow Function (bar): ${laptopRudi.bar()}`; // biasanya [object Window] di browser
+
+        document.getElementById("hasil").textContent = hasil;
+
+        // Juga di console
+        console.log(laptopRudi.foo()); // {milik: "Rudi", merk: "Asus", foo: f, bar: f}
+        console.log(laptopRudi.bar()); // Window {...}
+    </script>
+</body>
+</html>

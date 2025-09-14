@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi First-Class dengan Inline Callback</title>
+</head>
+<body>
+    <h1>Fungsi First-Class / Callback Inline</h1>
+    <p>Hasil total(5, 10, callback):</p>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Arrow function total menerima dua angka dan sebuah callback
+        const total = (a, b, cari) => cari(a, b);
+
+        // Memanggil total dengan inline arrow function sebagai callback
+        const hasil = total(5, 10, (x, y) => x + y);
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent = hasil;
+
+        // Juga menampilkan di console
+        console.log(hasil); // Output: 15
+    </script>
+</body>
+</html>

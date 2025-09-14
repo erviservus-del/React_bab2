@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover - var vs let</title>
+</head>
+<body>
+  <h1>Belajar JavaScript: var vs let (Block Scope)</h1>
+
+  <script>
+    {
+      var foo = "Belajar JavaScript";
+      let bar = "Belajar React";
+    }
+
+    console.log(foo); // ✅ Belajar JavaScript
+    console.log(bar); // ❌ Uncaught ReferenceError: bar is not defined
+  </script>
+</body>
+</html>

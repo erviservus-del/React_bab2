@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Map: Object Mahasiswa</title>
+</head>
+<body>
+    <h1>Contoh Array Map untuk Object Mahasiswa</h1>
+    <div id="hasil"></div>
+
+    <script>
+        // Array of objects mahasiswa
+        const mahasiswas = [
+            { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" },
+            { nama: "Lisa", umur: 18, jurusan: "Sistem Informasi" },
+            { nama: "Rudi", umur: 19, jurusan: "Teknik Elektro" }
+        ];
+
+        // Fungsi untuk memproses tiap mahasiswa menjadi string HTML
+        const prosesMahasiswa = (mahasiswa) =>
+            `<p>${mahasiswa.nama} (${mahasiswa.umur}), ${mahasiswa.jurusan}</p>`;
+
+        // Map array untuk menghasilkan array string HTML
+        const formatMahasiswas = mahasiswas.map(prosesMahasiswa);
+
+        console.log(formatMahasiswas);
+        /*
+        Output:
+        [
+            "<p>Eka (19), Teknik Informatika</p>",
+            "<p>Lisa (18), Sistem Informasi</p>",
+            "<p>Rudi (19), Teknik Elektro</p>"
+        ]
+        */
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").innerHTML = formatMahasiswas.join('');
+    </script>
+</body>
+</html>

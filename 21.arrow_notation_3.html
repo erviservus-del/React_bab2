@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Kuadrat (Sederhana)</title>
+</head>
+<body>
+    <h1>Hitung Kuadrat dengan Arrow Function</h1>
+    <p>Hasil kuadrat dari 5:</p>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Arrow function tanpa tanda kurung di parameter
+        const kuadrat = a => a * a;
+
+        // Menggunakan arrow function
+        const nilai = 5;
+        document.getElementById("hasil").textContent = kuadrat(nilai);
+        console.log(kuadrat(5)); // 25
+    </script>
+</body>
+</html>

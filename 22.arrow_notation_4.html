@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Angka Acak dengan Arrow Function</title>
+</head>
+<body>
+    <h1>Generate Angka Acak (1–10)</h1>
+    <p>Angka acak yang dihasilkan:</p>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Arrow function untuk menghasilkan angka acak 1–10
+        const generateRandom = () => Math.floor(Math.random() * 10) + 1;
+
+        // Menghasilkan angka acak
+        const angkaAcak = generateRandom();
+        document.getElementById("hasil").textContent = angkaAcak;
+        console.log(angkaAcak); // Contoh output: 7
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Rest Parameter</title>
+</head>
+<body>
+    <h1>Contoh Rest Parameter pada Fungsi</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi dengan rest parameter
+        function foo(...args) {
+            return args; // mengembalikan array dari semua argumen
+        }
+
+        // Menjalankan fungsi dengan beberapa argumen
+        const hasil1 = foo(1, 2, 3); 
+        const hasil2 = foo(3, 5, 7, 9); 
+        const hasil3 = foo(5, 10, 15, 20, 25, 30);
+
+        console.log(hasil1); // [1, 2, 3]
+        console.log(hasil2); // [3, 5, 7, 9]
+        console.log(hasil3); // [5, 10, 15, 20, 25, 30]
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `foo(1, 2, 3) => [${hasil1}]\n`;
+        hasil += `foo(3, 5, 7, 9) => [${hasil2}]\n`;
+        hasil += `foo(5, 10, 15, 20, 25, 30) => [${hasil3}]`;
+        document.getElementById("hasil").textContent = hasil;
+    </script>
+</body>
+</html>

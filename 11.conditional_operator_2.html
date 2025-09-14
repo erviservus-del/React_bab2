@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Operator 2</title>
+</head>
+<body>
+  <h1>Belajar JavaScript (ES6) - Conditional Operator</h1>
+
+  <script>
+    const input = "100";
+
+    const result1 = Number.isInteger(input) ? "valid" : "invalid";
+    console.log(result1); // invalid
+
+    const result2 = (typeof input === "string") ? "valid" : "invalid";
+    console.log(result2); // valid
+
+    // Supaya terlihat juga di browser, tambahkan:
+    document.write(`<p>Hasil result1: ${result1}</p>`);
+    document.write(`<p>Hasil result2: ${result2}</p>`);
+  </script>
+</body>
+</html>

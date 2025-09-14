@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array forEach: Kuadrat</title>
+</head>
+<body>
+    <h1>Contoh Array forEach untuk Kuadrat</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        let arr = [10, 20, 30, 40];
+        let arrKuadrat = [];
+
+        // Menggunakan forEach untuk menghitung kuadrat tiap elemen
+        arr.forEach((val) => arrKuadrat.push(val * val));
+
+        console.log(arrKuadrat); // [100, 400, 900, 1600]
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent = `Array kuadrat: [${arrKuadrat}]`;
+    </script>
+</body>
+</html>

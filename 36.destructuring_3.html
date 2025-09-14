@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Object dari Function</title>
+</head>
+<body>
+    <h1>Contoh Destructuring Object dari Fungsi</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi yang mengembalikan object mahasiswa
+        const dataMahasiswa = () => {
+            return { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" };
+        }
+
+        // Destructuring langsung dari return object
+        let { nama, umur } = dataMahasiswa();
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `nama: ${nama}\n`; // Eka
+        hasil += `umur: ${umur}`;    // 19
+
+        document.getElementById("hasil").textContent = hasil;
+
+        // Juga di console
+        console.log(nama); // Eka
+        console.log(umur); // 19
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Angka Acak dalam Rentang</title>
+</head>
+<body>
+    <h1>Generate Angka Acak dalam Rentang</h1>
+    <p>Angka acak antara 10 dan 20:</p>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Arrow function untuk menghasilkan angka acak antara start dan end
+        const generateRandom = (start, end) => 
+            Math.floor(Math.random() * (end - start + 1)) + start;
+
+        // Contoh penggunaan
+        const angkaAcak = generateRandom(10, 20);
+        document.getElementById("hasil").textContent = angkaAcak;
+        console.log(angkaAcak); // Contoh output: 14
+    </script>
+</body>
+</html>

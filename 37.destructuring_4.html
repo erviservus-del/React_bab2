@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Object dengan Alias</title>
+</head>
+<body>
+    <h1>Destructuring Object dari Function dengan Alias</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi yang mengembalikan object mahasiswa
+        const dataMahasiswa = () => {
+            return { nama: "Eka", umur: 19, jurusan: "Teknik Informatika" };
+        }
+
+        // Destructuring object dengan alias
+        let { nama: namaMahasiswa, umur: umurMahasiswa } = dataMahasiswa();
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `namaMahasiswa: ${namaMahasiswa}\n`; // Eka
+        hasil += `umurMahasiswa: ${umurMahasiswa}`;   // 19
+
+        document.getElementById("hasil").textContent = hasil;
+
+        // Juga menampilkan di console
+        console.log(namaMahasiswa); // Eka
+        console.log(umurMahasiswa); // 19
+    </script>
+</body>
+</html>

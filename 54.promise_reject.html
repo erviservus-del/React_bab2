@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Reject</title>
+</head>
+<body>
+    <h1>Contoh Promise Reject</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi getUser mengembalikan Promise
+        const getUser = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // resolve("Rudi");
+                    reject("Something wrong..."); // reject setelah 2 detik
+                }, 2000);
+            });
+        }
+
+        console.log("Start...");
+
+        // Menangkap hasil Promise dengan .then dan .catch
+        getUser()
+            .then((userName) => console.log(userName))
+            .catch((error) => console.log(error));
+
+        console.log("Finish");
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent =
+            "Start...\nFinish\n(Hasil Promise akan muncul di console setelah 2 detik)";
+    </script>
+</body>
+</html>
+
+

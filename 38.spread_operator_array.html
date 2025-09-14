@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Spread Operator pada Array</title>
+</head>
+<body>
+    <h1>Contoh Spread Operator pada Array</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        let arr1 = [10, 20, 30];
+        let arr2 = [100, 200, 300];
+
+        // Menggabungkan dua array
+        let arr3 = [...arr1, ...arr2];
+        console.log(arr3); // [10, 20, 30, 100, 200, 300]
+
+        // Menambahkan elemen baru ke array
+        let arr4 = [...arr1, 40, 50];
+        console.log(arr4); // [10, 20, 30, 40, 50]
+
+        // Menambahkan array arr1 setelah elemen baru
+        let arr5 = [30, 40, 50, ...arr1];
+        console.log(arr5); // [30, 40, 50, 10, 20, 30]
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `arr3: [${arr3}]\n`;
+        hasil += `arr4: [${arr4}]\n`;
+        hasil += `arr5: [${arr5}]`;
+        document.getElementById("hasil").textContent = hasil;
+    </script>
+</body>
+</html>

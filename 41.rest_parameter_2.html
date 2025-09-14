@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Rest Parameter: Penjumlahan</title>
+</head>
+<body>
+    <h1>Contoh Rest Parameter: Fungsi Tambah</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi tambah dengan rest parameter
+        function tambah(...args) {
+            let total = 0;
+            for (let angka of args) {
+                total += angka; // menambahkan setiap angka
+            }
+            return total;
+        }
+
+        // Menjalankan fungsi dengan beberapa argumen
+        const hasil1 = tambah(1, 2, 3); 
+        const hasil2 = tambah(3, 5, 7, 9); 
+        const hasil3 = tambah(5, 10, 15, 20, 25, 30);
+
+        console.log(hasil1); // 6
+        console.log(hasil2); // 24
+        console.log(hasil3); // 105
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `tambah(1, 2, 3) => ${hasil1}\n`;
+        hasil += `tambah(3, 5, 7, 9) => ${hasil2}\n`;
+        hasil += `tambah(5, 10, 15, 20, 25, 30) => ${hasil3}`;
+        document.getElementById("hasil").textContent = hasil;
+    </script>
+</body>
+</html>

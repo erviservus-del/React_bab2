@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function: Generate Random dengan Default Parameter</title>
+</head>
+<body>
+    <h1>Generate Angka Acak dengan Default Parameter</h1>
+    <p>Contoh hasil:</p>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Arrow function dengan default parameter start=1 dan end=10
+        const generateRandom = (start = 1, end = 10) =>
+            Math.floor(Math.random() * (end - start + 1)) + start;
+
+        // Contoh penggunaan
+        const hasil1 = generateRandom();       // default 1-10
+        const hasil2 = generateRandom(5);      // 5-10
+        const hasil3 = generateRandom(10, 20); // 10-20
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent =
+            `generateRandom() => ${hasil1}\n` +
+            `generateRandom(5) => ${hasil2}\n` +
+            `generateRandom(10, 20) => ${hasil3}`;
+
+        // Juga menampilkan di console
+        console.log(generateRandom());      // contoh output: 8
+        console.log(generateRandom(5));     // contoh output: 6
+        console.log(generateRandom(10, 20));// contoh output: 17
+    </script>
+</body>
+</html>

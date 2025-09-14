@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Object Methods</title>
+</head>
+<body>
+    <h1>Contoh Object Methods: keys, values, entries</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Object mahasiswa
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika"
+        };
+
+        let hasil = '';
+
+        // Object.keys() → array nama properti
+        const keys = Object.keys(mahasiswa);
+        hasil += `Keys: ${JSON.stringify(keys)}\n`;
+        console.log(keys); // ["nama", "umur", "jurusan"]
+
+        // Object.values() → array nilai properti
+        const values = Object.values(mahasiswa);
+        hasil += `Values: ${JSON.stringify(values)}\n`;
+        console.log(values); // ["Eka", 19, "Teknik Informatika"]
+
+        // Object.entries() → array pasangan [key, value]
+        const entries = Object.entries(mahasiswa);
+        hasil += `Entries: ${JSON.stringify(entries, null, 2)}`;
+        console.log(entries);
+        /*
+        [
+          ["nama", "Eka"],
+          ["umur", 19],
+          ["jurusan", "Teknik Informatika"]
+        ]
+        */
+
+        // Menampilkan di halaman
+        document.getElementById("hasil").textContent = hasil;
+    </script>
+</body>
+</html>

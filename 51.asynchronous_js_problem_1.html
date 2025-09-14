@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalah Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Contoh Masalah Asynchronous JavaScript</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi getUser dengan setTimeout
+        const getUser = () => {
+            setTimeout(() => "Rudi", 2000); // mengembalikan "Rudi" setelah 2 detik, tapi tidak bisa ditangkap return-nya
+        }
+
+        console.log("Start...");
+        console.log(getUser()); // undefined karena setTimeout bersifat async
+        console.log("Finish");
+
+        // Menampilkan di halaman
+        const hasil = [
+            "Start...",
+            getUser(), // undefined
+            "Finish"
+        ];
+        document.getElementById("hasil").textContent = hasil.join('\n');
+    </script>
+</body>
+</html>

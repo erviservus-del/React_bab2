@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object dengan Arrow Function</title>
+</head>
+<body>
+    <h1>Object dengan Arrow Function (Perhatian pada this)</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Menggunakan arrow function
+        let laptopRudiArrow = {
+            milik: "Rudi",
+            merk: "Asus",
+            hidupkanLaptop: () => `Hidupkan laptop ${this.merk} milik ${this.milik}` // 'this' TIDAK merujuk ke laptopRudiArrow
+        };
+
+        // Menggunakan function biasa (benar)
+        let laptopRudi = {
+            milik: "Rudi",
+            merk: "Asus",
+            hidupkanLaptop() {
+                return `Hidupkan laptop ${this.merk} milik ${this.milik}`;
+            }
+        };
+
+        // Hasil
+        let hasil = '';
+        hasil += `Arrow Function: ${laptopRudiArrow.hidupkanLaptop()}\n`; // Biasanya undefined
+        hasil += `Function Biasa: ${laptopRudi.hidupkanLaptop()}`;         // Hidupkan laptop Asus milik Rudi
+
+        document.getElementById("hasil").textContent = hasil;
+
+        console.log(laptopRudiArrow.hidupkanLaptop()); // undefined
+        console.log(laptopRudi.hidupkanLaptop());      // Hidupkan laptop Asus milik Rudi
+    </script>
+</body>
+</html>

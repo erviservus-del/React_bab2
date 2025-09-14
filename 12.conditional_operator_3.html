@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Operator 3</title>
+  <style>
+    .valid {
+      color: green;
+      font-weight: bold;
+    }
+    .invalid {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Belajar JavaScript (ES6) - Conditional Operator 3</h1>
+
+  <script>
+    const input = "100";
+    const result = `<div class="${Number.isInteger(input) ? 'valid' : 'invalid'}">Isi Input: ${input}</div>`;
+
+    // tampil di console
+    console.log(result); // <div class="invalid">Isi Input: 100</div>
+
+    // tampil di browser
+    document.write(result);
+  </script>
+</body>
+</html>

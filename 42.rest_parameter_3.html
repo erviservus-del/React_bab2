@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter dengan Parameter Tetap</title>
+</head>
+<body>
+    <h1>Contoh Rest Parameter dengan Parameter Tetap</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi tambah dengan 2 parameter tetap dan sisanya sebagai rest parameter
+        const tambah = (a, b, ...args) => {
+            let total = 0;
+            for (const angka of args) {
+                total += angka; // menjumlahkan semua angka tambahan
+            }
+            return total;
+        }
+
+        const hasil1 = tambah(3, 5, 7, 9); // 7 + 9 = 16 (a=3, b=5 tidak dihitung)
+        
+        console.log(hasil1); // 16
+
+        // Menampilkan hasil di halaman
+        document.getElementById("hasil").textContent = `tambah(3, 5, 7, 9) => ${hasil1}`;
+    </script>
+</body>
+</html>

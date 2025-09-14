@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masalah Asynchronous JavaScript 2</title>
+</head>
+<body>
+    <h1>Contoh Masalah Asynchronous JavaScript 2</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Fungsi getUser dengan setTimeout
+        const getUser = () => {
+            setTimeout(() => {
+                console.log("processing done!");
+                return "Rudi"; // return ini TIDAK mempengaruhi getUser
+            }, 2000);
+        }
+
+        console.log("Start...");
+        console.log(getUser()); // undefined, karena return berada di callback async
+        console.log("Finish");
+
+        // Menampilkan di halaman
+        const hasil = [
+            "Start...",
+            getUser(), // undefined
+            "Finish"
+        ];
+        document.getElementById("hasil").textContent = hasil.join('\n');
+
+        // Setelah 2 detik, "processing done!" akan muncul di console
+    </script>
+</body>
+</html>

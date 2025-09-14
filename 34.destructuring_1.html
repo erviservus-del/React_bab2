@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Array</title>
+</head>
+<body>
+    <h1>Contoh Destructuring Array</h1>
+    <pre id="hasil"></pre>
+
+    <script>
+        // Array mahasiswa
+        let mahasiswa = ["Andi", "Lisa", "Eko"];
+
+        // Destructuring array
+        let [a, b, c] = mahasiswa;
+
+        // Menampilkan hasil di halaman
+        let hasil = '';
+        hasil += `a: ${a}\n`; // Andi
+        hasil += `b: ${b}\n`; // Lisa
+        hasil += `c: ${c}`;   // Eko
+
+        document.getElementById("hasil").textContent = hasil;
+
+        // Juga di console
+        console.log(a); // Andi
+        console.log(b); // Lisa
+        console.log(c); // Eko
+    </script>
+</body>
+</html>
+

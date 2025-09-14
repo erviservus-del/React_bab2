@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penambahan dan Perubahan Properti Object</title>
+</head>
+<body>
+    <h1>Contoh Object Mahasiswa</h1>
+    <pre id="hasilAwal"></pre>
+    <pre id="hasilUpdate"></pre>
+
+    <script>
+        // Membuat object mahasiswa
+        let mahasiswa = {
+            nama: "Eka",
+            umur: 19,
+            jurusan: "Teknik Informatika",
+            getInfo() {
+                return `${this.nama} (${this.umur} tahun) dari jurusan ${this.jurusan}`;
+            }
+        };
+
+        // Menampilkan object awal
+        document.getElementById("hasilAwal").textContent = 
+            "Object awal:\n" + JSON.stringify(mahasiswa, null, 2);
+
+        console.log(mahasiswa);
+        // Output: {nama: "Eka", umur: 19, jurusan: "Teknik Informatika", getInfo: ƒ}
+
+        // Mengubah dan menambahkan properti
+        mahasiswa.umur = 20;
+        mahasiswa.tempatLahir = "Jakarta";
+
+        // Menampilkan object setelah update
+        document.getElementById("hasilUpdate").textContent =
+            "Setelah update:\n" + JSON.stringify(mahasiswa, null, 2);
+
+        console.log(mahasiswa);
+        // Output: {nama: "Eka", umur: 20, jurusan: "Teknik Informatika", tempatLahir: "Jakarta", getInfo: ƒ}
+    </script>
+</body>
+</html>
